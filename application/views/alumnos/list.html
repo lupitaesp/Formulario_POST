@@ -1,3 +1,4 @@
+$def with(result)
 <!DOCTYPE html>
 <html>
   <header>
@@ -17,7 +18,21 @@
       <th scope="col">Edad</th>
       <th scope="col">Sexo</th>
       <th scope="col">Estado</th>
-    </tr>
+    </tr> 
+  </thead>
+  <tbody>
+    $for row  in result:
+      <tr>
+        <td>$row['matricula']</td>
+        <td>$row['nombre']</td>
+        <td>$row['apellido_pa']</td>
+        <td>$row['apellido_ma']</td>
+        <td>$row['edad']</td>
+        <td>$row['fecha_na']</td>
+        <td>$row['sexo']</td>
+        <td>$row['estado']</td>
+      </tr>
+  </tbody>
 </table>
 <button type="button" class="btn btn-warning" style= "background:blue">Insertar</button>
 <button type="button" class="btn btn-danger">Eliminar</button>
