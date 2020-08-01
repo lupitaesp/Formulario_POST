@@ -1,6 +1,8 @@
 import web 
 import app 
+import application.models.model as personas
 
+model_personas = personas.Personas()
 render=web.template.render('application/views/alumnos')
 
 class Insert():
@@ -13,15 +15,16 @@ class Insert():
     def POST(self):
         try:
             form = web.input()
-            print(form)
-            print(form.matricula)
-            print(form.name)
-            print(form.primero)
-            print(form.segundo)
-            print(form.edad)
-            print(form.fecha)
-            print(form.sexo)
-            print(form.estado)
-            return render.insert()
+            matricula = form.matricula
+            name = form.name
+            primero = form.primero
+            segundo = form.segundo
+            edad = form.edad
+            fecha = form.fecha
+            sexo = form.sexo
+            estado = form.estado
+            model_personas.insert(matricula,name,primero,segundo,edad,fecha,sexo,estado)
+            web.seeother('/list')
         except Exception as e:
-            return "Algo salio mal en la inserción!"
+            print(e)
+            return render.insert()

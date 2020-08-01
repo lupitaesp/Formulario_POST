@@ -23,7 +23,7 @@ $def with(result)
   <tbody>
     $for row  in result:
       <tr>
-        <td>$row['matricula']</td>
+        <td><a href="/view/$row['matricula']">$row['matricula']</a></td>
         <td>$row['nombre']</td>
         <td>$row['apellido_pa']</td>
         <td>$row['apellido_ma']</td>
