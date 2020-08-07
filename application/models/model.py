@@ -78,8 +78,36 @@ class Personas():
         except Exception as e:
             print(e)
             return False
+    def update(self, matricula, nombre,apellido_pa, apellido_ma, edad, fecha_na,sexo,estado):
+        try:
+            self.connect()
+            query = ("UPDATE personass SET nombre=%s,apellido_pa=%s,apellido_ma=%s,edad=%s,fecha_na=%s,sexo=%s,estado=%s WHERE matricula=%s;")
+            values = (nombre,apellido_pa,apellido_ma,edad,fecha_na,sexo,estado,matricula)
+            self.cursor.execute(query, values)
+            self.cnx.commit()
+            self.cursor.close()
+            self.cnx.close()
+            return True
+        except Exception as e:
+            print(e)
+            return False
+    def delete(self, matricula):
+        try:
+            self.connect()
+            query = ("DELETE FROM personass WHERE matricula= %s;")
+            values = (matricula,)
+            self.cursor.execute(query, values)
+            self.cnx.commit()
+            self.cursor.close()
+            self.cnx.close()
+            return True
+        except Exception as e:
+            print(e)
+            return False
 
 objeto = Personas()
 objeto.connect() 
+#print(objeto.delete("1718110388"))
+#objeto.update("1718110388","Lupita","Espinoza","Riveros","22","2000/04/05","Femenino","Hidalgo")
 for row in objeto.select():
     print(row)
