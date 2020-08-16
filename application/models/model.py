@@ -6,11 +6,11 @@ class Personas():
     def connect(self):
         try:
             self.cnx = mysql.connector.connect(
-                user='root',
-                password='lup11t44',
-                host='127.0.0.1',
+                user='lnnyn4x50lgaurnl',
+                password='mxjd2imd3ju02t06',
+                host='etdq12exrvdjisg6.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
                 port=3306,
-                database='alumnos'
+                database='hd2trui8dy2v6dj2'
             )
             self.cursor = self.cnx.cursor()
         except Exception as e:

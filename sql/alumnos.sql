@@ -1,9 +1,4 @@
-DROP database if exists alumnos;
-
-CREATE DATABASE alumnos;
-
-
-USE alumnos;
+USE hd2trui8dy2v6dj2;
 
 CREATE TABLE personass(
     id_alumno INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
